@@ -28,5 +28,21 @@ namespace Password_Checker
             int length = password.Length;
             return length;
         }
+
+        public bool getSpecialChars(string password)
+        {
+            bool specChar;
+            char[] passArray = password.ToCharArray();
+            char[] specialChars = { '!', '@', '#', '$', '%', '&', '*', '?' };
+            foreach(char character in specialChars) 
+            {
+                int CharinPassword = Array.IndexOf(passArray, character);
+                if(CharinPassword > -1)
+                {
+                    return specChar = true;
+                }              
+            }
+            return specChar = false;
+        }
     }
 }
