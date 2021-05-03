@@ -33,16 +33,30 @@ namespace Password_Checker
         {
             bool specChar;
             char[] passArray = password.ToCharArray();
-            char[] specialChars = { '!', '@', '#', '$', '%', '&', '*', '?' };
+            char[] specialChars = { '!', '@', '#', '$', '%', '&', '*', '?', ',', '.', '-', '_', '<', '>', '=', '+'};
             foreach(char character in specialChars) 
             {
                 int CharinPassword = Array.IndexOf(passArray, character);
                 if(CharinPassword > -1)
                 {
-                    return specChar = true;
+                    return true;
                 }              
             }
-            return specChar = false;
+            return false;
+        }
+
+        public bool getUppers(string password)
+        {
+            char[] passArray = password.ToCharArray();
+            foreach(char character in passArray)
+            {
+                bool isUpper = Char.IsUpper(character);
+                if(isUpper == true)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
