@@ -49,9 +49,13 @@ namespace Password_Checker
                 {
                     AnsiConsole.MarkupLine("Password is[bold red] less than 8 characters[/], consider a longer password");
                 }
-                else
+                else if(length > 8 && length < 11)
                 {
                     AnsiConsole.MarkupLine($"Password is[bold green] {length} characters[/] long which is good");
+                }
+                else
+                {
+                    AnsiConsole.MarkupLine($"Password is[bold green] {length} characters[/] long which is great");
                 }
 
                 bool hasSpecChar = newPassword.getSpecialChars(newPassword.password);
